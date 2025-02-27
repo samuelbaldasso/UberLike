@@ -1,11 +1,13 @@
 package com.sbaldasso.combobackend.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -19,62 +21,63 @@ import lombok.NoArgsConstructor;
 @Table(name = "users")
 public class User {
 
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-    @NotBlank(message = "Username is mandatory")
-    private String username;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @NotBlank(message = "Password is mandatory")
-    @Size(min = 8, message = "Password must be at least 8 characters long")
-    private String password;
+  @NotBlank(message = "Username is mandatory")
+  private String username;
 
-    @NotBlank(message = "Email is mandatory")
-    @Email(message = "Email should be valid")
-    private String email;
+  @NotBlank(message = "Password is mandatory")
+  @Size(min = 8, message = "Password must be at least 8 characters long")
+  private String password;
 
-    @ManyToOne
-    private Role role;
+  @NotBlank(message = "Email is mandatory")
+  @Email(message = "Email should be valid")
+  private String email;
 
-	public Long getId() {
-		return id;
-	}
+  @ManyToOne
+  @JsonManagedReference
+  private Role role;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+  public Long getId() {
+    return id;
+  }
 
-	public String getUsername() {
-		return username;
-	}
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+  public String getUsername() {
+    return username;
+  }
 
-	public String getPassword() {
-		return password;
-	}
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+  public String getPassword() {
+    return password;
+  }
 
-	public String getEmail() {
-		return email;
-	}
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+  public String getEmail() {
+    return email;
+  }
 
-	public Role getRole() {
-		return role;
-	}
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-	public void setRole(Role role) {
-		this.role = role;
-	}
-    
+  public Role getRole() {
+    return role;
+  }
+
+  public void setRole(Role role) {
+    this.role = role;
+  }
+
 }

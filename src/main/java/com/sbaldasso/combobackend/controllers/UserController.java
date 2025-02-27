@@ -9,6 +9,8 @@ import com.sbaldasso.combobackend.domain.User;
 import com.sbaldasso.combobackend.dtos.UserDto;
 import com.sbaldasso.combobackend.service.UserService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 @RestController
@@ -31,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody UserDto userDto) {
         User createdUser = userService.createUser(userDto);
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
