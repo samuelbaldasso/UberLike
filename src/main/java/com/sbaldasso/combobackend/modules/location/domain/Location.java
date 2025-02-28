@@ -4,6 +4,7 @@ import com.sbaldasso.combobackend.modules.user.domain.User;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
@@ -29,13 +30,16 @@ public class Location {
   @Column(nullable = false)
   private Double longitude;
 
-  @CreatedDate
-  private LocalDateTime timestamp;
-
   private Double speed;
 
   private Double heading;
 
   @Column(nullable = false)
-  private boolean isAvailable = true;
+  private boolean available = true;
+
+  @CreatedDate
+  private LocalDateTime createdAt;
+
+  @LastModifiedDate
+  private LocalDateTime updatedAt;
 }
