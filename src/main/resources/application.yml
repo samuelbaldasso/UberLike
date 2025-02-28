@@ -7,6 +7,12 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      connection-timeout: 20000
 
   jpa:
     hibernate:
@@ -16,6 +22,7 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
 
   jackson:
     default-property-inclusion: NON_NULL
@@ -32,10 +39,12 @@ logging:
     com.sbaldasso.combobackend: DEBUG
     org.springframework.web: INFO
     org.hibernate: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
 security:
   jwt:
-    secret: ${JWT_SECRET:your-256-bit-secret}
+    secret: dGhpc2lzYXZlcnlsb25nc2VjcmV0a2V5Zm9yaHMyNTZqd3R0b2tlbg==
     expiration: 86400000 # 24 hours
 
 app:
