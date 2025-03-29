@@ -26,8 +26,8 @@ Este repositório contém o backend de um aplicativo estilo Uber para motoboys, 
 
 ### 1. Clonar o Repositório
 ```sh
- git clone https://github.com/samuelbaldasso/Uber_Like-Java-Spring-RBAC-JWT-Security-WebSockets-Docker-PostgreSQL-Maven-Clean_Arch.git
- cd Uber_Like-Java-Spring-RBAC-JWT-Security-WebSockets-Docker-PostgreSQL-Maven-Clean_Arch
+ git clone https://github.com/samuelbaldasso/UberLike.git
+ cd UberLike
 ```
 
 ### 2. Configurar o Banco de Dados
