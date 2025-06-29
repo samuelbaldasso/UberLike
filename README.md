@@ -1,89 +1,88 @@
 # Uber-Like App Backend
 
-Este repositório contém o backend de um aplicativo estilo Uber para motoboys, desenvolvido com Java e Spring Boot, utilizando RBAC, JWT para segurança, WebSockets para comunicação em tempo real, Docker para conteinerização, PostgreSQL para persistência e Maven para gestão de dependências, seguindo a arquitetura limpa.
+This repository contains the backend of an Uber-style app for motorcycle couriers, developed with Java and Spring Boot, using RBAC, JWT for security, WebSockets for real-time communication, Docker for containerization, PostgreSQL for persistence and Maven for dependency management, following the clean architecture.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **Java 17**
-- **Spring Boot 3**
-  - Spring Security (JWT e RBAC)
-  - Spring WebSockets
-  - Spring Data JPA
-- **PostgreSQL**
-- **Docker**
-- **Maven**
-- **Arquitetura Limpa**
+- Java 17
+- Spring Boot 3
+- Spring Security (JWT and RBAC)
+- Spring WebSockets
+- Spring Data JPA
+- PostgreSQL
+- Docker
+- Maven
+- Clean Architecture
 
-## Funcionalidades Principais
+## Main Features
 
-- **Autenticação e Autorizção**: JWT com RBAC para controle de acesso baseado em funções (usuário, motoboy, admin).
-- **Gerenciamento de Perfis**: Edição e visualização de perfis.
-- **Geolocalização e Mapeamento**: Integração para seleção de localização.
-- **Solicitação de Corridas**: Criação, aceitação/rejeição de solicitações.
-- **Atualização em Tempo Real**: WebSockets para rastreamento de status.
+- **Authentication and Authorization**: JWT with RBAC for role-based access control (user, courier, admin).
+- **Profile Management**: Editing and viewing profiles.
+- **Geolocation and Mapping**: Integration for location selection.
+- **Race Request**: Creation, acceptance/rejection of requests.
+- **Real-Time Update**: WebSockets for status tracking.
 
-## Como Rodar o Projeto
+## How to Run the Project
 
-### 1. Clonar o Repositório
+### Clone the Repository
 ```sh
  git clone https://github.com/samuelbaldasso/UberLike.git
  cd UberLike
 ```
 
-### 2. Configurar o Banco de Dados
-Crie um banco PostgreSQL e ajuste o `application.yml`:
+### 2. Configure the Database
+Create a PostgreSQL database and adjust the `application.yml`:
 ```yaml
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/uber_like_db
-    username: postgres
-    password: sua_senha
+ datasource:
+ url: jdbc:postgresql://localhost:5432/uber_like_db
+ username: postgres
+ password: your_password
 ```
 
-### 3. Rodar com Docker
+### 3. Run with Docker
 ```sh
 docker-compose up -d
 ```
 
-### 4. Rodar o Backend
+### 4. Run Backend
 ```sh
 mvn clean install
 mvn spring-boot:run
 ```
 
-## Documentação da API
-A API está documentada com **Swagger**. Após iniciar o backend, acesse:
+## API documentation
+The API is documented with **Swagger**. After starting the backend, go to:
 ```sh
 http://localhost:8080/swagger-ui.html
 ```
 
-## Estrutura do Projeto
+## Project Structure
 ```
-Uber_Like-Java-Spring/
+Uber_Like-Java- Spring/
 ├── src/main/java/com/uberlike/
-│   ├── config/       # Configurações gerais do sistema
-│   ├── controller/   # Controladores da API REST
-│   ├── service/      # Serviços e regras de negócio
-│   ├── repository/   # Repositórios JPA
-│   ├── security/     # Configuração de segurança e JWT
-│   ├── model/        # Entidades e modelos
-│   └── websocket/    # Configuração e serviço de WebSockets
+│ ├── config/ # General system settings
+│ ├── controller/ # REST API controllers
+│ ├── service/ # Services and business rules
+│ ├── repository/ # JPA repositories
+│ ├── security/ # Security and JWT configuration
+│ ├── model/ # Entities and models
+│ └── websocket/ # WebSockets configuration and service
 ├── src/main/resources/
-│   ├── application.yml  # Configurações principais
-│   ├── db/migration/    # Scripts de migração do banco
+│ ├── application. yml # Main configurations
+│ ├── db/migration/ # Database migration scripts
 ├── Dockerfile
 ├── docker-compose.yml
 ├── pom.xml
 └── README.md
 ```
 
-## Como Contribuir
-1. Faça um fork do projeto.
-2. Crie uma branch com a feature (`git checkout -b feature-nova`).
-3. Commit suas alterações (`git commit -m 'Adiciona nova feature'`).
-4. Faça push para a branch (`git push origin feature-nova`).
-5. Abra um Pull Request.
+## How to contribute
+1. Fork the project.
+2. Create a branch with the feature (`git checkout -b feature-new`).
+3. Commit your changes (`git commit -m ‘Add new feature’`).
+4. Push to the branch (`git push origin feature-new`).
+5. Open a Pull Request.
 
-## Licença
-Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
+## License
+This project is licensed under the MIT license. See the `LICENSE` file for more details.
