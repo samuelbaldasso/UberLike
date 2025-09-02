@@ -59,7 +59,7 @@ http://localhost:8080/swagger-ui.html
 
 ## Project Structure
 ```
-Uber_Like-Java- Spring/
+Uber_Like-Java-Spring/
 ├── src/main/java/com/uberlike/
 │ ├── config/ # General system settings
 │ ├── controller/ # REST API controllers
